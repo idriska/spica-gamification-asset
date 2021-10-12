@@ -1,0 +1,687 @@
+# BUCKET - Users
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: users-bucket
+spec:
+  title: Users
+  description: Describe your new bucket
+  icon: accessibility
+  primary: identity
+  readOnly: false
+  history: false
+  properties:
+    identity:
+      type: string
+      title: identity
+      description: Description of the identity input
+      options:
+        position: left
+    name:
+      type: string
+      title: name
+      description: Description of the name input
+      options:
+        position: left
+    bio:
+      type: textarea
+      title: bio
+      description: Description of the bio input
+      options:
+        position: left
+    avatar:
+      type: storage
+      title: avatar
+      description: Description of the avatar input
+      options:
+        position: left
+    rank:
+      type: string
+      title: rank
+      description: Description of the Rank input
+      options:
+        position: right
+      enum:
+        - rookie
+        - senior
+        - master
+        - ninja
+    installation_progress:
+      type: number
+      title: installation progress
+      description: Description of the installation_progress input
+      options:
+        position: right
+    reputation_score:
+      type: number
+      title: reputation score
+      description: Description of the reputation_score input
+      options:
+        position: right
+    exchangeable_points:
+      type: number
+      title: exchangeable points
+      description: To exchange with virtual goods
+      options:
+        position: right
+  acl:
+    write: true==true
+    read: true==true
+  order: 7
+---
+# BUCKET - Badges
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: badges-bucket
+spec:
+  title: Badges
+  description: Add all badges in your game
+  icon: offline_bolt
+  primary: name
+  readOnly: false
+  history: false
+  properties:
+    name:
+      type: string
+      title: name
+      description: Description of the name input
+      options:
+        position: bottom
+    icon:
+      type: storage
+      title: icon
+      description: Description of the icon input
+      options:
+        position: bottom
+    achievement:
+      type: textarea
+      title: achievement
+      description: Description of the achievement input
+      options:
+        position: bottom
+    rewards:
+      type: array
+      title: rewards
+      description: Description of the rewards input
+      options:
+        position: bottom
+      items:
+        title: Title of the items
+        type: object
+        properties:
+          amount:
+            type: number
+            title: amount
+            description: Description of the amount input
+            options:
+              position: bottom
+  acl:
+    write: true==true
+    read: true==true
+  order: 8
+---
+# BUCKET - Quests
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: quests-bucket
+spec:
+  title: Quests
+  description: Add all quests here
+  icon: description
+  primary: name
+  readOnly: false
+  history: false
+  properties:
+    name:
+      type: string
+      title: name
+      description: Description of the name input
+      options:
+        position: bottom
+    description:
+      type: textarea
+      title: description
+      description: Description of the description input
+      options:
+        position: bottom
+    rewards:
+      type: array
+      title: rewards
+      description: Description of the rewards input
+      options:
+        position: bottom
+      items:
+        title: Title of the items
+        type: object
+        properties:
+          amount:
+            type: number
+            title: amount
+            description: Description of the amount input
+            options:
+              position: bottom
+  acl:
+    write: true==true
+    read: true==true
+  order: 9
+---
+# BUCKET - Competition Atendees
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: competition-atendees-bucket
+spec:
+  title: Competition Atendees
+  description: Describe your new bucket
+  icon: rowing
+  primary: attendee_id
+  readOnly: false
+  history: false
+  properties:
+    attendee_id:
+      type: string
+      title: attendee_id
+      description: Description of the attendee_id input
+      options:
+        position: bottom
+    created_at:
+      type: date
+      title: created_at
+      description: Description of the created_at input
+      options:
+        position: bottom
+      default: :created_at
+  acl:
+    write: true==true
+    read: true==true
+  order: 13
+---
+# BUCKET - Action Rewards
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: action-rewards-bucket
+spec:
+  title: Action Rewards
+  description: Add your fixed action rewards here. Random action rewards (managed
+    by the function) will be added here automatically.
+  icon: done_outline
+  primary: reason
+  readOnly: false
+  history: false
+  properties:
+    reason:
+      type: string
+      title: reason
+      description: Description of the reason input
+      options:
+        position: bottom
+    amount:
+      type: number
+      title: amount
+      description: Description of the amount input
+      options:
+        position: bottom
+    is_random_reward:
+      type: boolean
+      title: is_random_reward
+      description: Description of the is_random_reward input
+      options:
+        position: bottom
+      default: false
+  acl:
+    write: true==true
+    read: true==true
+  order: 14
+---
+# BUCKET - Users
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: users-bucket
+spec:
+  title: Users
+  description: Describe your new bucket
+  icon: accessibility
+  primary: identity
+  readOnly: false
+  history: false
+  properties:
+    identity:
+      type: string
+      title: identity
+      description: Description of the identity input
+      options:
+        position: left
+    name:
+      type: string
+      title: name
+      description: Description of the name input
+      options:
+        position: left
+    bio:
+      type: textarea
+      title: bio
+      description: Description of the bio input
+      options:
+        position: left
+    avatar:
+      type: storage
+      title: avatar
+      description: Description of the avatar input
+      options:
+        position: left
+    rank:
+      type: string
+      title: rank
+      description: Description of the Rank input
+      options:
+        position: right
+      enum:
+        - rookie
+        - senior
+        - master
+        - ninja
+    installation_progress:
+      type: number
+      title: installation progress
+      description: Description of the installation_progress input
+      options:
+        position: right
+    reputation_score:
+      type: number
+      title: reputation score
+      description: Description of the reputation_score input
+      options:
+        position: right
+    exchangeable_points:
+      type: number
+      title: exchangeable points
+      description: To exchange with virtual goods
+      options:
+        position: right
+    badges:
+      type: relation
+      title: badges
+      description: Description of the badges input
+      options:
+        position: right
+      relationType: onetomany
+      dependent: false
+      bucket:
+        resourceFieldRef:
+          schemaName: badges-bucket
+    completed_quests:
+      type: relation
+      title: completed_quests
+      description: Description of the completed_quests input
+      options:
+        position: right
+      relationType: onetomany
+      dependent: false
+      bucket:
+        resourceFieldRef:
+          schemaName: quests-bucket
+  acl:
+    write: true==true
+    read: true==true
+  order: 7
+---
+# BUCKET - Badges
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: badges-bucket
+spec:
+  title: Badges
+  description: Add all badges in your game
+  icon: offline_bolt
+  primary: name
+  readOnly: false
+  history: false
+  properties:
+    name:
+      type: string
+      title: name
+      description: Description of the name input
+      options:
+        position: bottom
+    icon:
+      type: storage
+      title: icon
+      description: Description of the icon input
+      options:
+        position: bottom
+    achievement:
+      type: textarea
+      title: achievement
+      description: Description of the achievement input
+      options:
+        position: bottom
+    rewards:
+      type: array
+      title: rewards
+      description: Description of the rewards input
+      options:
+        position: bottom
+      items:
+        title: Title of the items
+        type: object
+        properties:
+          reward:
+            type: relation
+            title: reward
+            description: Description of the reward input
+            options:
+              position: bottom
+            relationType: onetoone
+            dependent: false
+            bucket:
+              resourceFieldRef:
+                schemaName: rewards-bucket
+          amount:
+            type: number
+            title: amount
+            description: Description of the amount input
+            options:
+              position: bottom
+  acl:
+    write: true==true
+    read: true==true
+  order: 8
+---
+# BUCKET - Quests
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: quests-bucket
+spec:
+  title: Quests
+  description: Add all quests here
+  icon: description
+  primary: name
+  readOnly: false
+  history: false
+  properties:
+    name:
+      type: string
+      title: name
+      description: Description of the name input
+      options:
+        position: bottom
+    description:
+      type: textarea
+      title: description
+      description: Description of the description input
+      options:
+        position: bottom
+    rewards:
+      type: array
+      title: rewards
+      description: Description of the rewards input
+      options:
+        position: bottom
+      items:
+        title: Title of the items
+        type: object
+        properties:
+          reward:
+            type: relation
+            title: reward
+            description: Description of the reward input
+            options:
+              position: bottom
+            relationType: onetoone
+            dependent: false
+            bucket:
+              resourceFieldRef:
+                schemaName: rewards-bucket
+          amount:
+            type: number
+            title: amount
+            description: Description of the amount input
+            options:
+              position: bottom
+    parent_quest:
+      type: relation
+      title: parent_quest
+      description: Description of the parent_quest input
+      options:
+        position: bottom
+      relationType: onetoone
+      dependent: false
+      bucket:
+        resourceFieldRef:
+          schemaName: quests-bucket
+  acl:
+    write: true==true
+    read: true==true
+  order: 9
+---
+# BUCKET - Rewards
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: rewards-bucket
+spec:
+  title: Rewards
+  description: Add all reward types here. Other mechanics uses this bucket
+  icon: done_all
+  primary: name
+  readOnly: false
+  history: false
+  properties:
+    name:
+      type: string
+      title: name
+      description: Description of the name input
+      options:
+        position: bottom
+  acl:
+    write: true==true
+    read: true==true
+  order: 11
+---
+# BUCKET - Competitions
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: competitions-bucket
+spec:
+  title: Competitions
+  description: Describe your new bucket
+  icon: rowing
+  primary: name
+  readOnly: false
+  history: false
+  properties:
+    name:
+      type: string
+      title: name
+      description: Description of the name input
+      options:
+        position: bottom
+    description:
+      type: textarea
+      title: description
+      description: Description of the description input
+      options:
+        position: bottom
+    rules:
+      type: array
+      title: rules
+      description: Description of the rules input
+      options:
+        position: bottom
+      items:
+        title: Rule
+        type: string
+        description: ""
+    created_at:
+      type: date
+      title: created_at
+      description: Description of the created_at input
+      options:
+        position: bottom
+      default: :created_at
+    start_time:
+      type: date
+      title: start_time
+      description: Description of the start_time input
+      options:
+        position: bottom
+    finish_time:
+      type: date
+      title: finish_time
+      description: Description of the finish_time input
+      options:
+        position: bottom
+  acl:
+    write: true==true
+    read: true==true
+  order: 12
+---
+# BUCKET - Competition Atendees
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: competition-atendees-bucket
+spec:
+  title: Competition Atendees
+  description: Describe your new bucket
+  icon: rowing
+  primary: attendee_id
+  readOnly: false
+  history: false
+  properties:
+    attendee_id:
+      type: string
+      title: attendee_id
+      description: Description of the attendee_id input
+      options:
+        position: bottom
+    created_at:
+      type: date
+      title: created_at
+      description: Description of the created_at input
+      options:
+        position: bottom
+      default: :created_at
+    user:
+      type: relation
+      title: user
+      description: Description of the user input
+      options:
+        position: bottom
+      relationType: onetoone
+      dependent: false
+      bucket:
+        resourceFieldRef:
+          schemaName: users-bucket
+    competition:
+      type: relation
+      title: competition
+      description: Description of the competition input
+      options:
+        position: bottom
+      relationType: onetoone
+      dependent: false
+      bucket:
+        resourceFieldRef:
+          schemaName: competitions-bucket
+  acl:
+    write: true==true
+    read: true==true
+  order: 13
+---
+# BUCKET - Action Rewards
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: action-rewards-bucket
+spec:
+  title: Action Rewards
+  description: Add your fixed action rewards here. Random action rewards (managed
+    by the function) will be added here automatically.
+  icon: done_outline
+  primary: reason
+  readOnly: false
+  history: false
+  properties:
+    reason:
+      type: string
+      title: reason
+      description: Description of the reason input
+      options:
+        position: bottom
+    user:
+      type: relation
+      title: user
+      description: Description of the user input
+      options:
+        position: bottom
+      relationType: onetoone
+      dependent: false
+      bucket:
+        resourceFieldRef:
+          schemaName: users-bucket
+    reward:
+      type: relation
+      title: reward
+      description: Description of the reward input
+      options:
+        position: bottom
+      relationType: onetoone
+      dependent: false
+      bucket:
+        resourceFieldRef:
+          schemaName: rewards-bucket
+    amount:
+      type: number
+      title: amount
+      description: Description of the amount input
+      options:
+        position: bottom
+    is_random_reward:
+      type: boolean
+      title: is_random_reward
+      description: Description of the is_random_reward input
+      options:
+        position: bottom
+      default: false
+  acl:
+    write: true==true
+    read: true==true
+  order: 14
+---
+# BUCKET - Virtual Goods
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: virtual-goods-bucket
+spec:
+  title: Virtual Goods
+  description: Add every virtual goods here
+  icon: eco
+  primary: name
+  readOnly: false
+  history: false
+  properties:
+    name:
+      type: string
+      title: name
+      description: Description of the name input
+      options:
+        position: bottom
+    icon:
+      type: storage
+      title: icon
+      description: Description of the icon input
+      options:
+        position: bottom
+  acl:
+    write: true==true
+    read: true==true
+  order: 15
